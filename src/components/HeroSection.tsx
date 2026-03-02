@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { ArrowDown, Github, Linkedin, Mail, Phone } from "lucide-react";
-import heroBg from "@/assets/hero-bg.jpg";
+
+const heroBg =
+  "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=2000&q=80";
 
 const HeroSection = () => {
   return (
@@ -13,9 +15,9 @@ const HeroSection = () => {
         <img
           src={heroBg}
           alt=""
-          className="w-full h-full object-cover opacity-40"
+          className="w-full h-full object-cover opacity-80"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/55 to-background/85" />
       </div>
 
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
