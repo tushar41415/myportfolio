@@ -48,7 +48,7 @@ const CursorGlow = () => {
           alpha: 1,
           life: 0,
           maxLife: glitter ? 24 + Math.random() * 18 : 42 + Math.random() * 30,
-          hue: Math.random() > 0.7 ? 22 + Math.random() * 10 : 186 + Math.random() * 18,
+          hue: Math.random() > 0.75 ? 338 + Math.random() * 18 : 35 + Math.random() * 16,
           glitter,
         });
       }
@@ -96,18 +96,18 @@ const CursorGlow = () => {
       }
 
       const outer = ctx.createRadialGradient(followX, followY, 0, followX, followY, 170);
-      outer.addColorStop(0, "hsla(188, 96%, 65%, 0.09)");
-      outer.addColorStop(0.4, "hsla(205, 90%, 58%, 0.035)");
-      outer.addColorStop(1, "hsla(205, 90%, 58%, 0)");
+      outer.addColorStop(0, "hsla(42, 95%, 66%, 0.09)");
+      outer.addColorStop(0.4, "hsla(33, 88%, 56%, 0.035)");
+      outer.addColorStop(1, "hsla(33, 88%, 56%, 0)");
       ctx.fillStyle = outer;
       ctx.beginPath();
       ctx.arc(followX, followY, 170, 0, Math.PI * 2);
       ctx.fill();
 
       const inner = ctx.createRadialGradient(followX, followY, 0, followX, followY, 45);
-      inner.addColorStop(0, "hsla(188, 96%, 75%, 0.24)");
-      inner.addColorStop(0.65, "hsla(203, 90%, 64%, 0.08)");
-      inner.addColorStop(1, "hsla(203, 90%, 56%, 0)");
+      inner.addColorStop(0, "hsla(44, 96%, 74%, 0.24)");
+      inner.addColorStop(0.65, "hsla(347, 72%, 64%, 0.08)");
+      inner.addColorStop(1, "hsla(347, 72%, 56%, 0)");
       ctx.fillStyle = inner;
       ctx.beginPath();
       ctx.arc(followX, followY, 45, 0, Math.PI * 2);

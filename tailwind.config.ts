@@ -15,8 +15,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['"DM Serif Display"', "serif"],
-        body: ['"Space Grotesk"', "sans-serif"],
+        display: ['"Cormorant Garamond"', "serif"],
+        body: ["Manrope", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
