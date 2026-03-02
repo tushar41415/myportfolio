@@ -55,11 +55,11 @@ const AboutSection = () => {
           transition={{ duration: 0.7, delay: 0.5 }}
           className="text-muted-foreground text-center leading-relaxed max-w-3xl mx-auto font-body text-base md:text-lg"
         >
-          Aspiring Full Stack Developer with a solid foundation in HTML, CSS, JavaScript, 
-          and hands-on experience in React.js for building interactive, responsive web 
-          interfaces. Proficient in Git for version control and collaborative development. 
-          Continuously expanding backend knowledge with Node.js, Express, and MongoDB, 
-          aiming to deliver seamless end-to-end solutions. Known for a growth mindset, 
+          Aspiring Full Stack Developer with a solid foundation in HTML, CSS, JavaScript,
+          and hands-on experience in React.js for building interactive, responsive web
+          interfaces. Proficient in Git for version control and collaborative development.
+          Continuously expanding backend knowledge with Node.js, Express, and MongoDB,
+          aiming to deliver seamless end-to-end solutions. Known for a growth mindset,
           quick learning ability, and a passion for building real-world applications.
         </motion.p>
       </div>

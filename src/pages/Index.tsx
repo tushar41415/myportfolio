@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
@@ -8,45 +7,25 @@ import ProjectsSection from "@/components/ProjectsSection";
 import EducationSection from "@/components/EducationSection";
 import ContactSection from "@/components/ContactSection";
 import CursorGlow from "@/components/CursorGlow";
-import Prism from "@/components/Prism";
+import { Vortex } from "@/components/ui/vortex";
 
 const Index = () => {
-  const [enablePrism, setEnablePrism] = useState(false);
-
-  useEffect(() => {
-    const media = window.matchMedia("(max-width: 1024px), (prefers-reduced-motion: reduce)");
-    const isLowPowerDevice = (navigator.hardwareConcurrency || 8) <= 6;
-
-    const updatePrismState = () => {
-      setEnablePrism(!media.matches && !isLowPowerDevice);
-    };
-
-    updatePrismState();
-    media.addEventListener("change", updatePrismState);
-
-    return () => {
-      media.removeEventListener("change", updatePrismState);
-    };
-  }, []);
-
   return (
     <div className="relative min-h-screen bg-background">
-      {enablePrism && (
-        <div className="pointer-events-none fixed inset-0 z-0 opacity-35">
-          <Prism
-            animationType="rotate"
-            glow={0.9}
-            noise={0.18}
-            transparent
-            scale={3.2}
-            hueShift={0.22}
-            colorFrequency={0.85}
-            bloom={0.9}
-            timeScale={0.35}
-          />
-        </div>
-      )}
-      <div className="pointer-events-none fixed inset-0 z-[1] bg-background/66" />
+      <div className="pointer-events-none fixed inset-0 z-0 opacity-45">
+        <Vortex
+          particleCount={220}
+          rangeY={700}
+          baseHue={28}
+          baseSpeed={0.03}
+          rangeSpeed={0.45}
+          baseRadius={0.7}
+          rangeRadius={1.8}
+          backgroundColor="transparent"
+          containerClassName="h-full w-full"
+        />
+      </div>
+      <div className="pointer-events-none fixed inset-0 z-[1] bg-background/62" />
 
       <CursorGlow />
       <div className="relative z-10">
