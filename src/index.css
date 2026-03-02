@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 221 42% 8%;
+    --foreground: 210 35% 96%;
+
+    --card: 222 35% 12%;
+    --card-foreground: 210 35% 96%;
+
+    --popover: 222 35% 12%;
+    --popover-foreground: 210 35% 96%;
+
+    --primary: 186 90% 50%;
+    --primary-foreground: 220 42% 8%;
+
+    --secondary: 220 32% 17%;
+    --secondary-foreground: 210 28% 90%;
+
+    --muted: 220 24% 17%;
+    --muted-foreground: 214 17% 68%;
+
+    --accent: 22 95% 62%;
+    --accent-foreground: 220 42% 8%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 215 32% 24%;
+    --input: 220 29% 18%;
+    --ring: 186 90% 50%;
+
+    --radius: 0.7rem;
+
+    --gold-glow: 186 90% 45%;
+    --gold-light: 188 84% 74%;
+    --surface-glass: 221 35% 13%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply text-foreground;
+    font-family: 'Space Grotesk', sans-serif;
+    background:
+      radial-gradient(circle at 12% 12%, hsla(186, 85%, 45%, 0.16), transparent 34%),
+      radial-gradient(circle at 86% 20%, hsla(22, 95%, 62%, 0.14), transparent 36%),
+      radial-gradient(circle at 52% 90%, hsla(213, 90%, 52%, 0.12), transparent 42%),
+      linear-gradient(180deg, hsl(224, 45%, 9%) 0%, hsl(219, 42%, 7%) 52%, hsl(224, 40%, 6%) 100%);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'DM Serif Display', serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(190 95% 75%), hsl(186 90% 58%), hsl(207 92% 60%), hsl(22 95% 66%));
+  }
+
+  .text-gradient-rainbow {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(90deg, hsl(188 94% 64%), hsl(209 90% 62%), hsl(258 80% 70%), hsl(23 95% 66%), hsl(188 94% 64%));
+    background-size: 200% 100%;
+    animation: shimmer 5s linear infinite;
+  }
+
+  .bg-glass {
+    background: linear-gradient(135deg, hsla(221, 39%, 16%, 0.72), hsla(211, 40%, 14%, 0.56), hsla(186, 70%, 20%, 0.3));
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid hsla(188, 82%, 70%, 0.2);
+  }
+
+  .bg-glass-warm {
+    background: linear-gradient(135deg, hsla(222, 38%, 16%, 0.68), hsla(218, 34%, 14%, 0.5), hsla(24, 90%, 56%, 0.18));
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid hsla(23, 96%, 72%, 0.2);
+  }
+
+  .gold-glow {
+    box-shadow: 0 0 32px hsla(187, 90%, 52%, 0.18), 0 0 64px hsla(23, 96%, 62%, 0.12);
+  }
+
+  .gold-text-glow {
+    text-shadow: 0 0 24px hsla(187, 92%, 66%, 0.4), 0 0 50px hsla(24, 95%, 64%, 0.18);
+  }
+
+  .section-padding {
+    @apply py-20 md:py-32 px-4 md:px-8;
+  }
+
+  .gradient-border {
+    border: 1px solid transparent;
+    background-clip: padding-box;
+    position: relative;
+  }
+
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, hsla(188, 95%, 68%, 0.42), hsla(208, 95%, 64%, 0.26), hsla(24, 96%, 64%, 0.28));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  .section-gradient-1 {
+    background:
+      radial-gradient(ellipse at 18% 52%, hsla(188, 85%, 28%, 0.32) 0%, transparent 62%),
+      radial-gradient(ellipse at 82% 46%, hsla(22, 90%, 28%, 0.3) 0%, transparent 62%);
+  }
+
+  .section-gradient-2 {
+    background:
+      radial-gradient(ellipse at 70% 26%, hsla(210, 80%, 32%, 0.3) 0%, transparent 60%),
+      radial-gradient(ellipse at 30% 74%, hsla(188, 78%, 30%, 0.26) 0%, transparent 60%);
+  }
+
+  .section-gradient-3 {
+    background:
+      radial-gradient(ellipse at 50% 16%, hsla(23, 90%, 30%, 0.26) 0%, transparent 60%),
+      radial-gradient(ellipse at 18% 82%, hsla(201, 84%, 30%, 0.3) 0%, transparent 60%);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
